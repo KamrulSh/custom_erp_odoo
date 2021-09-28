@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="employee_dailyreport_tree" model="ir.ui.view">
+        <field name="name">employee.dailyreport.tree</field>
+        <field name="model">employee.dailyreport</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="report_date"/>
+                <field name="office_in_time"/>
+                <field name="office_out_time"/>
+                <field name="work_duration"/>
+                <field name="mail_sent"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="employee_dailyreport_form" model="ir.ui.view">
+        <field name="name">employee.dailyreport.form</field>
+        <field name="model">employee.dailyreport</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <group>
+                                        <field name="name"/>
+                                        <field name="department"/>
+                                        <field name="report_date"/>
+                                        <field name="mail_sent"/>
+                                    </group>
+                                </div>
+                                <div class="col-md-6">
+                                    <group>
+                                        <field name="office_in_time"/>
+                                        <field name="office_out_time"/>
+                                        <field name="work_duration"/>
+                                    </group>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <group string="Activity Details">
+                                        <field name="activity"/>
+                                    </group>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <group>
+                                        <field name="achievement"/>
+                                        <field name="problems"/>
+                                        <field name="solutions"/>
+                                    </group>
+                                </div>
+                            </div>
+                        </div>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="employee_dailyreport_search" model="ir.ui.view">
+        <field name="name">employee.dailyreport.search</field>
+        <field name="model">employee.dailyreport</field>
+        <field name="arch" type="xml">
+            <search string="Daily Report">
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="daily_report_action" model="ir.actions.act_window">
+        <field name="name">Daily report</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">employee.dailyreport</field>
+        <field name="view_mode">tree,form,search</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create Daily Report
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="daily_report_root"
+              name="Daily Report"
+              web_icon="daily_report,static/description/icon.png"/>
+
+    <menuitem id="employee_daily_report"
+              name="Daily Report"
+              parent="daily_report_root"
+              action="daily_report_action"/>
+
+</odoo>

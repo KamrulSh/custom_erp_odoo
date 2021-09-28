@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="daily_report_activity_list">
+            <field name="name">daily_report_activity.list</field>
+            <field name="model">dailyreport.activity</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name='start_time'/>
+                    <field name="end_time"/>
+                    <field name="activity"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="daily_report_activity_form" model="ir.ui.view">
+            <field name="name">daily_report_activity.form</field>
+            <field name="model">dailyreport.activity</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group string="Activity Details">
+                            <field name='start_time'/>
+                            <field name="end_time"/>
+                            <field name="activity"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="daily_report_activity_action_window">
+            <field name="name">daily_report activity window</field>
+            <field name="res_model">dailyreport.activity</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

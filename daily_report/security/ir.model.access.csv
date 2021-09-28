@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_employee_dailyreport,employee_dailyreport,model_employee_dailyreport,,1,1,1,1
+access_dailyreport_activity,dailyreport_activity,model_dailyreport_activity,,1,1,1,1
