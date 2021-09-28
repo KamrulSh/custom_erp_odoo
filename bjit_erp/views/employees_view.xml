@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_users_form_employee" model="ir.ui.view">
+            <field name="name">employee.form.inherited</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[@name='hide_basic_information']" position="replace">
+                </xpath>
+
+                <xpath expr="//notebook/page[1]" position="replace">
+                    <page name="public" string="Work Information">
+                        <div id="o_work_employee_container">              <!-- These two div are used to position org_chart -->
+                            <div id="o_work_employee_main">
+                                <group string="Contact Information">
+                                    <field name="address_id" context="{'show_address': 1}"
+                                           options='{"always_reload": True, "highlight_first_line": True}'/>
+                                    <field name="work_location"/>
+                                    <field name="work_email" widget="email"/>
+                                    <field name="mobile_phone" widget="phone"/>
+                                    <field name="work_phone" widget="phone"/>
+                                    <field name="company_id" groups="base.group_multi_company"/>
+                                    <field name="skype_id"/>
+                                </group>
+                                <group name="position" string="Position">
+                                    <field name="department_id"/>
+                                    <field name="job_title"/>
+                                    <field name="employee_type"/>
+                                    <field name="parent_id" />
+                                    <field name="coach_id"/>
+                                </group>
+                                <group name="departure" string="Departure"
+                                       attrs="{'invisible': [('active', '=', True)]}">
+                                    <field name="departure_reason"/>
+                                    <field name="departure_description"/>
+                                    <field name="departure_date"/>
+                                </group>
+                                <group string="Schedule">
+                                    <field name="resource_calendar_id" required="1"/>
+                                    <field name="tz"/>
+                                </group>
+                            </div>
+                        </div>
+                    </page>
+                </xpath>
+            </field>
+
+        </record>
+    </data>
+</odoo>
