@@ -13,11 +13,13 @@
     'category': 'Uncategorized',
     'version': '0.1',
 
-    'depends': ['base', 'hr'],
+    'depends': ['base', 'hr', 'project'],
 
     'data': [
         # 'security/ir.model.access.csv',
+        # 'security/security.xml',
         'views/employees_view.xml',
+        'views/views_project_erp.xml',
     ],
     'demo': [
         # 'demo/demo.xml',

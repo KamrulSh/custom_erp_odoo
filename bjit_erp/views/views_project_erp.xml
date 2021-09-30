@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <data>
+      <record id="edit_project_inherit" model="ir.ui.view">
+          <field name="name">project.project.inherit</field>
+          <field name="model">project.project</field>
+          <field name="inherit_id" ref="project.edit_project"/>
+          <field name="arch" type="xml">
+              <xpath expr="//page[2]" position="inside">
+                  <group>
+                      <field name='projectid'/>
+                      <field name='p_department'/>
+                      <field name='p_department_head'/>
+                      <field name='project_status'/>
+                      <field name='project_type'/>
+                  </group>
+              </xpath>
+
+              <xpath expr="//notebook/page[1]" position="after">
+                  <field name='project_status'/>
+              </xpath>
+              <xpath expr="//notebook/page[2]" position="after">
+                  <page string="Project Timeline">
+                      <group>
+                          <field name='name'/>
+                          <field name='last_modified_on'/>
+                      </group>
+                  </page>
+              </xpath>
+              <xpath expr="//notebook/page[3]" position="after">
+                  <page string="Project Technologies">
+                      <group>
+                          <field name='project_tech'/>
+                      </group>
+                  </page>
+              </xpath>
+              <xpath expr="//notebook/page[4]" position="after">
+                  <page string="Project Members">
+                      <group>
+                          <field name='name'/>
+                      </group>
+                  </page>
+              </xpath>
+              <xpath expr="//notebook/page[5]" position="after">
+                  <page string="Project Matrices">
+                      <group>
+                          <field name='project_matrices'/>
+                      </group>
+                  </page>
+              </xpath>
+              <xpath expr="//notebook/page[6]" position="after">
+                  <page string="Project Lesson Learn">
+                      <group>
+                          <field name='project_lesson'/>
+                      </group>
+                  </page>
+              </xpath>
+              <xpath expr="//notebook/page[7]" position="after">
+                  <page string="Project Modules">
+                      <group>
+                          <field name='project_modules'/>
+                      </group>
+                  </page>
+              </xpath>
+          </field>
+
+     </record>
+      <record id="project_template_kanban_view_inherit" model="ir.ui.view">
+          <field name="name">Product.template.product.kanban</field>
+          <field name="model">project.project</field>
+          <field name="inherit_id" ref="project.view_project_kanban"/>
+          <field name="arch" type="xml">
+              <xpath expr="//templates" position="inside">
+                  <field name="last_modified_on"/>
+              </xpath>
+              <xpath expr="//div[@class='o_primary']" position="inside">
+                  <br/>
+                  <span style="color: #337ab7">Project ID:<field name="projectid"/></span>
+                  <span style="color: #337ab7">Status:<field name="project_status"/></span>
+                  <br/>
+                  <span style="color: #337ab7">Last Modified:<field name="last_modified_on"/></span>
+                  <br/>
+                  <span style="color: #337ab7">Created on:<field name="created_on"/></span>
+                  <br/>
+                  <span style="color: #337ab7">Start Date:<field name="start_date"/></span>
+                  <br/>
+                  <span style="color: #337ab7">Project Close Date:<field name="project_close_date"/></span>
+              </xpath>
+          </field>
+      </record>
+  </data>
+</odoo>
