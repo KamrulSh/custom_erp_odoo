@@ -21,6 +21,7 @@ class CreateDailyReport(models.Model):
     work_duration = fields.Float(compute="_work_duration", store=True)
     mail_sent = fields.Boolean(default=False, string="Mail Sent")
     activity = fields.One2many('dailyreport.activity', 'report', string="Activities")
+    activity_details_id = fields.One2many('dailyreport.activity', 'report_activity_ids', string="Activities details")
     achievement = fields.Text(string='Achievement')
     problems = fields.Text(string='Problems')
     solutions = fields.Text(string='Solutions')

@@ -20,6 +20,7 @@
         # 'security/security.xml',
         'views/employees_view.xml',
         'views/views_project_erp.xml',
+        'views/tamplates.xml',
     ],
     'demo': [
         # 'demo/demo.xml',
