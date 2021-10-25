@@ -1,2 +1,3 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_bjit_erp,bjit_erp,model_bjit_erp,base.group_user,1,1,1,1
+access_res_users,res_users,model_res_users,bjit_erp.group_contact_engineer,1,0,0,0
+access_res_users1,res_users,model_res_users,bjit_erp.group_contact_admin,1,1,1,1

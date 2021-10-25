@@ -16,8 +16,8 @@
     'depends': ['base', 'hr', 'project'],
 
     'data': [
-        # 'security/ir.model.access.csv',
-        # 'security/security.xml',
+        'security/security.xml',
+        'security/ir.model.access.csv',
         'views/employees_view.xml',
         'views/views_project_erp.xml',
         'views/tamplates.xml',
